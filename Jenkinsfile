@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone the GitHub repository
-                git branch: 'main', url: 'https://github.com/abdurahim50/jenkins_training_2024.git'
+                git url: 'https://github.com/abdurahim50/jenkins_training_2024.git', branch: 'main'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
                     // Deploy the static website to the local Apache server
                     sh """
                     sudo cp -r index.html ${targetDir}/
-                    sudo chown www-data:www-data ${targetDir}/index.html
+                    sudo chown apache:apache ${targetDir}/index.html
                     sudo chmod 644 ${targetDir}/index.html
                     """
                 }
