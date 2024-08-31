@@ -1,11 +1,11 @@
 pipeline {
-    agent { label 'mybuild' }
+    agent { label 'slave1' }
 
     stages {
         stage('Checkout') {
             steps {
                 // Clone the GitHub repository
-                git url: 'https://github.com/abdurahim50/jenkins_training_2024.git'
+                git url: 'https://github.com/abdurahim50/jenkins_training_2024.git', branch: 'main'
             }
         }
 
@@ -33,3 +33,4 @@ pipeline {
         }
     }
 }
+
