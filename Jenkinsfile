@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone the GitHub repository
-                git url: 'https://github.com/abdurahim50/jenkins_training_2024.git', branch: 'main'
+                git branch: 'main', url: 'https://github.com/abdurahim50/jenkins_training_2024.git'
             }
         }
 
